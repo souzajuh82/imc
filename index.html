@@ -7,21 +7,22 @@ function CalculoImc(){
 var peso = parseFloat(document.formImc.peso.value);
 var altura = parseFloat(document.formImc.altura.value);
 var imc = peso/(altura*altura);
-if(imc < 17){
-	document.formImc.diagn.value = "Muito abaixo do peso";
-}else if(imc > 17 && imc < 18,49){
-	document.formImc.diagn.value = "Abaixo do peso";
-}else if(imc > 18,5 && imc < 24,99){
-	document.formImc.diagn.value = "Normal";
-}else if(imc > 25 && imc < 29,99){
-	document.formImc.diagn.value = "Acima do peso";
-}else if(imc > 30 && imc < 34,99){
-	document.formImc.diagn.value = "Com Obesidade I";
-}else if(imc > 35 && imc < 39,99){
-	document.formImc.diagn.value = "Com Obesidade Severa";
-}else if(imc > 40){
-	document.formImc.diagn.value = "Com Obesidade Mórbida";
-}
+		if(imc < 17.0){
+			document.formImc.diagn.value = "Muito abaixo do peso";
+		} else if(imc >= 17.0 && imc < 18.5){
+			document.formImc.diagn.value = "Abaixo do peso";
+		} else if(imc >= 18.5 && imc < 24.9){
+			document.formImc.diagn.value = "Normal";
+		} else if(imc >= 24.9 && imc < 29.99){
+			document.formImc.diagn.value = "Acima do peso";
+		} else if(imc >= 29.99 && imc < 34.99){
+			document.formImc.diagn.value = "Com Obesidade I";
+		} else if(imc >= 34.99 && imc < 39.9){
+			document.formImc.diagn.value = "Com Obesidade Severa";
+		} else{
+			document.formImc.diagn.value = "Com Obesidade Mórbida";
+		}
+
 document.formImc.resultado.value = imc.toFixed(2);
 	return false;
 }
