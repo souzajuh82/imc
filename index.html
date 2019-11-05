@@ -1,0 +1,53 @@
+<html>
+<meta charset="UTF-8">
+
+<head> 
+<script type="text/javascript">
+function CalculoImc(){
+var peso = parseFloat(document.formImc.peso.value);
+var altura = parseFloat(document.formImc.altura.value);
+var imc = peso/(altura*altura);
+if(imc < 17){
+	document.formImc.diagn.value = "Muito abaixo do peso";
+}else if(imc > 17 && imc < 18,49){
+	document.formImc.diagn.value = "Abaixo do peso";
+}else if(imc > 18,5 && imc < 24,99){
+	document.formImc.diagn.value = "Normal";
+}else if(imc > 25 && imc < 29,99){
+	document.formImc.diagn.value = "Acima do peso";
+}else if(imc > 30 && imc < 34,99){
+	document.formImc.diagn.value = "Com Obesidade I";
+}else if(imc > 35 && imc < 39,99){
+	document.formImc.diagn.value = "Com Obesidade Severa";
+}else if(imc > 40){
+	document.formImc.diagn.value = "Com Obesidade Mórbida";
+}
+document.formImc.resultado.value = imc.toFixed(2);
+	return false;
+}
+  
+</script>
+</head>
+<LINK rel = "stylesheet" href = "css/style.css">
+<body>
+<div id="t">
+		<h1 align="center">Calcule seu IMC</h1>
+		<br><br>
+		O IMC é o Índice de Massa Corporal, ele indica
+		se você está dentro dos padrões considerados saudáveis 
+		ou não, dependendo da altura e do peso. Calcule
+		seu IMC e descubra se você está ok.
+		
+<form action="IMC-Calculator-Example.html" name="formImc" method="post" onsubmit="return CalculoImc();">
+
+<p align="center">Peso: <input type="text" name="peso"></p>
+<p align="center">Altura: <input type="text" name="altura"></p>
+<p align="center"><input type="submit" value="Calcular">
+<input type="reset" value="Limpar"></p>
+<p align="center">Resultado:<input type="text" name="resultado"></p>
+<p align="center">Você está:<input type="text" name="diagn"></p>
+</form>
+</div>
+	
+</body>
+</html>
